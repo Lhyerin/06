@@ -1,15 +1,39 @@
 #include <iostream>
 #include <stdio.h>
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int square(int a)
+int get_integer(int y)
 {
-	return(a*a);
+	printf("값을 입력하세요.");
+	scanf("%i",&y);
+	return y;
 }
 
-int main()
+int combination(int x, int y, int z)
+{   
+    int comb;
+    comb =x/(y*z);
+    return comb;
+}
+
+
+int factorial(int x)
 {
-	int a=2;
-	a=square(a);
-	printf("a=%i\n",a);
+	int res=1;
+	int i;
+	for(i=1;i<=x;i++)
+	   res=res*i;
+	return res;
+}
+
+int main(void)
+{
+	int n,r,m,k,o,comb;
+	n=get_integer(n);
+	r=get_integer(r);	
+	m=factorial(n);
+	k=factorial(n-r);
+	o=factorial(r);
+	comb=combination(m,k,o);
+	printf("%i",comb);
+
 }
